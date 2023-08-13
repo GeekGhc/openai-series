@@ -9,7 +9,6 @@ embedding_model = "text-embedding-ada-002"
 
 batch_size = 100
 
-
 def generate_data_by_prompt(prompt):
     response = openai.Completion.create(
         engine=COMPLETION_MODEL,
