@@ -3,6 +3,8 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 
+from langchain.chains import SimpleSequentialChain
+
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 llm = OpenAI(model_name="text-davinci-003", max_tokens=2048, temperature=0.5)
@@ -23,4 +25,10 @@ print(english_answer)
 
 answer_translate_chain = LLMChain(llm=llm, prompt=zh_to_cn_prompt)
 answer = answer_translate_chain.run(english_answer=english_answer)
+print(answer)
+
+chinese_qa_chain = SimpleSequentialChain(
+    chains=[question_translate_chain, qa_chain, answer_translate_chain], input_key="question",
+    verbose=True)
+answer = chinese_qa_chain.run(question="请你作为一个机器学习的专家，介绍一下CNN的原理。")
 print(answer)
