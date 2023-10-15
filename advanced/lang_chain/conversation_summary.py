@@ -3,6 +3,8 @@ from langchain.chains import ConversationChain
 from langchain.memory import ConversationSummaryBufferMemory
 from langchain.llms import OpenAI
 
+# BufferSummaryMemory 来维护一个对整体对话做了小结，同时又记住最近几轮对话的“记忆”
+
 SUMMARIZER_TEMPLATE = """请将以下内容逐步概括所提供的对话内容，并将新的概括添加到之前的概括中，形成新的概括。
 
 EXAMPLE

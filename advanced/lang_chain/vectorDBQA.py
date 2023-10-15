@@ -4,6 +4,8 @@ from langchain.text_splitter import SpacyTextSplitter
 from langchain import OpenAI, VectorDBQA
 from langchain.document_loaders import TextLoader
 
+# 实现FAISS的外部索引问答
+
 llm = OpenAI(temperature=0)
 loader = TextLoader('./data/ecommerce_faq.txt')
 documents = loader.load()

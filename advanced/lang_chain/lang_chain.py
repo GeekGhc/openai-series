@@ -3,6 +3,8 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 
+# 基于langchain 实现多轮对话
+
 from langchain.chains import SimpleSequentialChain
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")

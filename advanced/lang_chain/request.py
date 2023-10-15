@@ -3,8 +3,9 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 from langchain.chains import LLMRequestsChain
-import re
 from langchain.chains import TransformChain, SequentialChain
+
+# 实现调用外部API
 
 openai.api_key = os.environ.get("OPENAI_API_KEY")
 

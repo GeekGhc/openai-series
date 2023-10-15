@@ -3,6 +3,8 @@ from langchain.memory import ConversationSummaryMemory
 from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 
+# 通过 SummaryMemory 概括对话的历史并记下来
+
 llm = OpenAI(temperature=0)
 memory = ConversationSummaryMemory(llm=OpenAI())
 

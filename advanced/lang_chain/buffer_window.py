@@ -3,6 +3,8 @@ from langchain.prompts import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
 
+# 通过 BufferWindowMemory 记住过去几轮的对话
+
 template = """你是一个中国厨师，用中文回答做菜的问题。你的回答需要满足以下要求:
 1. 你的回答必须是中文
 2. 回答限制在100个字以内

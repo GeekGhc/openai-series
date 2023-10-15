@@ -5,8 +5,9 @@ from llama_index.vector_stores.faiss import FaissVectorStore
 from langchain.embeddings.huggingface import HuggingFaceEmbeddings
 from llama_index.text_splitter import SentenceSplitter
 from llama_index.node_parser import SimpleNodeParser
-
 from transformers import AutoTokenizer, AutoModel
+
+# 基于langchain实现llama index外链知识库的能力
 
 openai.api_key = ""
 
