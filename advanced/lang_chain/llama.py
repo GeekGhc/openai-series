@@ -13,7 +13,7 @@ openai.api_key = ""
 text_splitter = SentenceSplitter(separator="\n\n", chunk_size=100, chunk_overlap=20)
 
 parser = SimpleNodeParser(text_splitter=text_splitter, chunk_size=1024, chunk_overlap=20)
-documents = SimpleDirectoryReader('./data/faq/').load_data()
+documents = SimpleDirectoryReader('../data/faq/').load_data()
 nodes = parser.get_nodes_from_documents(documents)
 
 embed_model = LangchainEmbedding(HuggingFaceEmbeddings(
