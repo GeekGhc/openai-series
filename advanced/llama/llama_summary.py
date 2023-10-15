@@ -9,7 +9,7 @@ llm_predictor = LLMPredictor(llm=ChatOpenAI(temperature=0, model_name="gpt-3.5-t
 
 text_splitter = SpacyTextSplitter(pipeline="zh_core_web_sm", chunk_size=2048)
 parser = SimpleNodeParser(text_splitter=text_splitter)
-documents = SimpleDirectoryReader('./data/mr_fujino').load_data()
+documents = SimpleDirectoryReader('../data/mr_fujino').load_data()
 nodes = parser.get_nodes_from_documents(documents)
 
 service_context = ServiceContext.from_defaults(llm_predictor=llm_predictor)
