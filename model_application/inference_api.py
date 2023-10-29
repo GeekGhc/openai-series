@@ -19,10 +19,18 @@ def query(payload, api_url=API_URL, headers=headers):
 
 
 # 文本embedding
-model = "hfl/chinese-pert-base"
-API_URL = f"https://api-inference.huggingface.co/models/{model}"
+# model = "hfl/chinese-pert-base"
+# API_URL = f"https://api-inference.huggingface.co/models/{model}"
+#
+# question = "今天天气真不错！"
+# data = query({"inputs": question, "wait_for_model": True}, api_url=API_URL)
+#
+# print(data)
 
-question = "今天天气真不错！"
-data = query({"inputs": question, "wait_for_model": True}, api_url=API_URL)
+# 测试自己部署的模型
+API_URL = "https://xxxx.aws.endpoints.huggingface.cloud"
+
+text = "My name is WangWei and I like to"
+data = query({"inputs": text}, api_url=API_URL)
 
 print(data)
