@@ -41,5 +41,17 @@ dog_text_tensor = get_text_feature(dog_text)
 
 display(IPyImage(filename='./data/cat.jpg'))
 
+two_cats_text = "There are two cats."
+two_cats_text_tensor = get_text_feature(two_cats_text)
+
+truck_text = "This is a truck."
+truck_text_tensor = get_text_feature(truck_text)
+
+couch_text = "This is a couch."
+couch_text_tensor = get_text_feature(couch_text)
+
 print("Similarity with cat : ", cosine_similarity(image_tensor, cat_text_tensor))
 print("Similarity with dog : ", cosine_similarity(image_tensor, dog_text_tensor))
+print("Similarity with two cats : ", cosine_similarity(image_tensor, two_cats_text_tensor))
+print("Similarity with truck : ", cosine_similarity(image_tensor, truck_text_tensor))
+print("Similarity with couch : ", cosine_similarity(image_tensor, couch_text_tensor))
